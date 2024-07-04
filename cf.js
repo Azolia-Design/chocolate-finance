@@ -3715,10 +3715,10 @@ const mainScript = () => {
             history.replaceState({},'',`${newPath + hash}`)
 
             if ((newPath == '/app-terms-and-conditions') || (newPath == '/privacy-policy')) {
-                $('.header').remove();
-                $('.nav').remove();
-                $('.sc-home-cta-waitlist').remove();
-                $('.sc-footer').remove();
+                //$('.header').remove();
+                //$('.nav').remove();
+                // $('.sc-home-cta-waitlist').remove();
+                // $('.sc-footer').remove();
             }
         }
         updateURL();
@@ -3788,13 +3788,23 @@ const mainScript = () => {
                     if ($(window).width() > 768) {
                         if (inst.scroll > $('.term-outer-wrap').offset().top) {
                             $('.sc-term-sub-nav, .sc-term-subnav-inner').addClass('on-scroll')
-                            $('.term-toc-wrap-overlay').addClass('on-cus-scroll')
+                            
                         } else {
                             $('.sc-term-sub-nav, .sc-term-subnav-inner').removeClass('on-scroll')
                             $('.term-toc-wrap-overlay').removeClass('on-cus-scroll')
                         }
+                        if ($('.header').hasClass('on-scroll') && !$('.header').hasClass('on-hide')) {
+                            $('.sc-term-sub-nav, .term-toc-wrap-overlay').addClass('on-scroll-pushed')
+                        } else {
+                            $('.sc-term-sub-nav, .term-toc-wrap-overlay').removeClass('on-scroll-pushed')
+                        }
                     } else {
                         $('.term-toc-wrap-overlay').addClass('on-cus-scroll')
+                        if ($('.header').hasClass('on-scroll') && !$('.header').hasClass('on-hide')) {
+                            $('.sc-term-sub-nav, .term-toc-wrap-overlay').addClass('on-scroll-pushed')
+                        } else {
+                            $('.sc-term-sub-nav, .term-toc-wrap-overlay').removeClass('on-scroll-pushed')
+                        }
                         // if (inst.scroll > $('.term-outer-wrap').offset().top) {
                         //     //$('.sc-term-sub-nav').addClass('on-scroll')
                         // } else {
