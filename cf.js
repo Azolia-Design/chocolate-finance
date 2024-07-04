@@ -100,7 +100,7 @@ const mainScript = () => {
         $('meta[property="og:title"]').attr('content', `${toTitle(title)} | Chocolate Finance`)
         $('meta[property="twitter:title"]').attr('content', `${toTitle(title)} | Chocolate Finance`)
         $('meta[property="og:url"]').attr('content',`${window.location.href}`)
-        $('link[rel="canonical"]').attr('href', `https://chocof.webflow.io/article/${title}`)
+        $('link[rel="canonical"]').attr('href', `https://chocolatefinance.webflow.io/article/${title}`)
         if (desc) {
             $('meta[property="og:type"]').attr('content','article')
             $('meta[name="description"]').attr('content', desc)
