@@ -4264,6 +4264,7 @@ const mainScript = () => {
                 if ($('.intro-wrap').length) {
                     $('.intro-wrap').addClass('loaded')
                 }
+                $('.sc-doc-main').find('.load-ske').addClass('loaded')
             })
         }
         getAllDocs()
