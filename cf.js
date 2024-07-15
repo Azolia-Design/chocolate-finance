@@ -4303,6 +4303,7 @@ const mainScript = () => {
         }
         function docInteraction() {
             let allCateGroups = $('.doc-main-group');
+            $('.term-toc-head-txt').text($('.term-toc-item-link .term-toc-item-txt').eq(0).text())
             lenis.on('scroll', function(e) {
                 for (let x = 0; x < allCateGroups.length; x++) {
                     let top = allCateGroups.eq(x).get(0).getBoundingClientRect().top;
